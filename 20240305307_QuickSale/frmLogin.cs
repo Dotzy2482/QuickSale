@@ -255,8 +255,8 @@ public partial class frmLogin : Form
         var rect = pnlBrand.ClientRectangle;
         using var brush = new System.Drawing.Drawing2D.LinearGradientBrush(
             rect,
-            Color.FromArgb(12, 21, 41),    // #0c1529 (Dark blue)
-            Color.FromArgb(30, 58, 138),   // #1e3a8a (Vibrant blue at bottom-right)
+            Color.FromArgb(6, 10, 22),     // dark navy (top-left)
+            Color.FromArgb(22, 50, 118),   // lighter blue (bottom-right)
             45F);
         g.FillRectangle(brush, rect);
     }
