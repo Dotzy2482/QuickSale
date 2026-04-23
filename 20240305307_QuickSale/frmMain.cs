@@ -125,12 +125,12 @@ public partial class frmMain : Form
         var pnl  = (Panel)sender;
         var g    = e.Graphics;
         g.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
-        g.Clear(Color.FromArgb(17, 28, 54));
+        g.Clear(Color.White);
 
         // Rounded outline
         var rect = new Rectangle(0, 0, pnl.Width - 1, pnl.Height - 1);
         using var path = CreateRoundedPath(rect, 8);
-        using var pen  = new Pen(Color.FromArgb(51, 65, 85), 1f);
+        using var pen  = new Pen(Color.FromArgb(226, 232, 240), 1f);
         g.DrawPath(pen, path);
 
         // Search icon

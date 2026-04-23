@@ -51,8 +51,8 @@ namespace _20240305307_QuickSale
             pnlStatusBar.SuspendLayout();
             SuspendLayout();
 
-            // ── pnlTop — dark header bar ──────────────────────────────────────
-            pnlTop.BackColor = Color.FromArgb(17, 28, 54);
+            // ── pnlTop — white header bar ─────────────────────────────────────
+            pnlTop.BackColor = Color.White;
             pnlTop.Controls.Add(lblBreadcrumb);
             pnlTop.Controls.Add(pnlSearch);
             pnlTop.Controls.Add(btnSettings);
@@ -70,7 +70,7 @@ namespace _20240305307_QuickSale
             // lblBreadcrumb
             //
             lblBreadcrumb.Font = new Font("Segoe UI", 11F);
-            lblBreadcrumb.ForeColor = Color.White;
+            lblBreadcrumb.ForeColor = Color.FromArgb(30, 41, 59);
             lblBreadcrumb.Location = new Point(20, 0);
             lblBreadcrumb.Name = "lblBreadcrumb";
             lblBreadcrumb.Size = new Size(420, 64);
@@ -81,7 +81,7 @@ namespace _20240305307_QuickSale
             // pnlSearch — custom-painted rounded search bar
             //
             pnlSearch.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            pnlSearch.BackColor = Color.FromArgb(17, 28, 54);
+            pnlSearch.BackColor = Color.White;
             pnlSearch.Cursor = Cursors.IBeam;
             pnlSearch.Location = new Point(642, 15);
             pnlSearch.Name = "pnlSearch";
@@ -95,10 +95,10 @@ namespace _20240305307_QuickSale
             btnSettings.BackColor = Color.Transparent;
             btnSettings.Cursor = Cursors.Hand;
             btnSettings.FlatAppearance.BorderSize = 0;
-            btnSettings.FlatAppearance.MouseOverBackColor = Color.FromArgb(27, 44, 80);
+            btnSettings.FlatAppearance.MouseOverBackColor = Color.FromArgb(241, 245, 249);
             btnSettings.FlatStyle = FlatStyle.Flat;
             btnSettings.Font = new Font("Segoe MDL2 Assets", 14, GraphicsUnit.Pixel);
-            btnSettings.ForeColor = Color.FromArgb(148, 163, 184);
+            btnSettings.ForeColor = Color.FromArgb(100, 116, 139);
             btnSettings.Location = new Point(878, 14);
             btnSettings.Name = "btnSettings";
             btnSettings.Size = new Size(36, 36);
@@ -113,10 +113,10 @@ namespace _20240305307_QuickSale
             btnNotification.BackColor = Color.Transparent;
             btnNotification.Cursor = Cursors.Hand;
             btnNotification.FlatAppearance.BorderSize = 0;
-            btnNotification.FlatAppearance.MouseOverBackColor = Color.FromArgb(27, 44, 80);
+            btnNotification.FlatAppearance.MouseOverBackColor = Color.FromArgb(241, 245, 249);
             btnNotification.FlatStyle = FlatStyle.Flat;
             btnNotification.Font = new Font("Segoe MDL2 Assets", 14, GraphicsUnit.Pixel);
-            btnNotification.ForeColor = Color.FromArgb(148, 163, 184);
+            btnNotification.ForeColor = Color.FromArgb(100, 116, 139);
             btnNotification.Location = new Point(918, 14);
             btnNotification.Name = "btnNotification";
             btnNotification.Size = new Size(36, 36);
@@ -148,7 +148,7 @@ namespace _20240305307_QuickSale
             //
             lblTopUserName.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             lblTopUserName.Font = new Font("Segoe UI", 9.5F, FontStyle.Bold);
-            lblTopUserName.ForeColor = Color.White;
+            lblTopUserName.ForeColor = Color.FromArgb(30, 41, 59);
             lblTopUserName.Location = new Point(1010, 13);
             lblTopUserName.Name = "lblTopUserName";
             lblTopUserName.Size = new Size(150, 18);
@@ -170,9 +170,9 @@ namespace _20240305307_QuickSale
             //
             btnSignOut.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             btnSignOut.Cursor = Cursors.Hand;
-            btnSignOut.FlatAppearance.BorderColor = Color.FromArgb(51, 65, 85);
+            btnSignOut.FlatAppearance.BorderColor = Color.FromArgb(226, 232, 240);
             btnSignOut.FlatAppearance.BorderSize = 1;
-            btnSignOut.FlatAppearance.MouseOverBackColor = Color.FromArgb(27, 44, 80);
+            btnSignOut.FlatAppearance.MouseOverBackColor = Color.FromArgb(241, 245, 249);
             btnSignOut.FlatStyle = FlatStyle.Flat;
             btnSignOut.Font = new Font("Segoe UI", 9F);
             btnSignOut.ForeColor = Color.FromArgb(148, 163, 184);
@@ -445,12 +445,14 @@ namespace _20240305307_QuickSale
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(17, 28, 54);
             ClientSize = new Size(1280, 768);
-            // Dock order: last added = first docked. pnlTop docks Top, pnlStatusBar docks Bottom,
-            // pnlNav docks Left, pnlContent fills remainder.
+            // Dock order: last added = first docked.
+            // pnlNav added last → docks Left spanning full height.
+            // pnlTop/pnlStatusBar added next → dock Top/Bottom of remaining (right) area.
+            // pnlContent fills what's left.
             Controls.Add(pnlContent);
-            Controls.Add(pnlNav);
-            Controls.Add(pnlStatusBar);
             Controls.Add(pnlTop);
+            Controls.Add(pnlStatusBar);
+            Controls.Add(pnlNav);
             KeyPreview = true;
             MinimumSize = new Size(900, 600);
             Name = "frmMain";
