@@ -1,0 +1,5 @@
+<Solution>
+  <Project Path="20240305307_QuickSale/20240305307_QuickSale.csproj" />
+  <Project Path="QuickSale.BLL/QuickSale.BLL.csproj" />
+  <Project Path="QuickSale.DAL/QuickSale.DAL.csproj" />
+</Solution>
