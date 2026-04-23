@@ -286,4 +286,3 @@ return _ctx.Users.Any(u => u.Username == username
 ### e. Submitted in zip/rar at OIS-LMS & GitHub
 
 - **GitHub:** https://github.com/Dotzy2482/QuickSale
-- **OIS-LMS:** submitted as `20240305307_QuickSale.zip`
