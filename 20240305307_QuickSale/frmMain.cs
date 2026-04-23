@@ -192,9 +192,7 @@ public partial class frmMain : Form
 
         _currentChildForm?.Close();
         Session.Clear();
-
-        new frmLogin().Show();
-        Close();
+        DialogResult = DialogResult.OK;   // signals Program.Main to loop back to login
     }
 
     // ── Alt+F4 / system close ────────────────────────────────────────────────
@@ -202,10 +200,7 @@ public partial class frmMain : Form
     protected override void OnFormClosed(FormClosedEventArgs e)
     {
         base.OnFormClosed(e);
-        if (Session.CurrentUser is not null)
-        {
-            Session.Clear();
-            Application.Exit();
-        }
+        // X-close: clear session; Program.Main will exit the loop since DialogResult != OK
+        Session.Clear();
     }
 }

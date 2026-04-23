@@ -29,6 +29,20 @@ public class UserManager
             : null;
     }
 
+    /// <summary>
+    /// Async version of Login — runs the DB query off the UI thread.
+    /// </summary>
+    public async Task<User?> LoginAsync(string username, string password)
+    {
+        if (string.IsNullOrWhiteSpace(username) || string.IsNullOrWhiteSpace(password))
+            return null;
+
+        var hash = HashPassword(password);
+        return await _userRepo.ValidateUserAsync(username, hash)
+            ? await _userRepo.GetByUsernameAsync(username)
+            : null;
+    }
+
     public List<User> GetAllUsers()
         => _userRepo.GetAll().ToList();
 
@@ -41,12 +55,12 @@ public class UserManager
         if (role != "Admin" && role != "Cashier")
             throw new ArgumentException("Role must be 'Admin' or 'Cashier'.", nameof(role));
 
-        if (_userRepo.GetByUsername(username) is not null)
+        if (_userRepo.GetByUsername(username.Trim().ToLower()) is not null)
             throw new InvalidOperationException($"Username '{username}' is already taken.");
 
         _userRepo.Add(new User
         {
-            Username = username.Trim(),
+            Username = username.Trim().ToLower(),
             PasswordHash = HashPassword(password),
             Role = role
         });
@@ -66,11 +80,11 @@ public class UserManager
         if (role != "Admin" && role != "Cashier")
             throw new ArgumentException("Role must be 'Admin' or 'Cashier'.", nameof(role));
 
-        var existing = _userRepo.GetByUsername(username.Trim());
+        var existing = _userRepo.GetByUsername(username.Trim().ToLower());
         if (existing is not null && existing.UserId != id)
             throw new InvalidOperationException($"Username '{username}' is already taken.");
 
-        user.Username = username.Trim();
+        user.Username = username.Trim().ToLower();
         user.Role     = role;
 
         if (!string.IsNullOrWhiteSpace(newPassword))
