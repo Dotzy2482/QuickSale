@@ -14,44 +14,43 @@ namespace _20240305307_QuickSale
 
         private void InitializeComponent()
         {
-            // ── Declarations ─────────────────────────────────────────────────
-            pnlTop           = new Panel();
-            lblBreadcrumb    = new Label();
-            pnlSearch        = new Panel();
-            btnSettings      = new Button();
-            btnNotification  = new Button();
-            pnlNotifDot      = new Panel();
-            pnlAvatar        = new Panel();
-            lblTopUserName   = new Label();
-            lblTopRole       = new Label();
-            btnSignOut       = new Button();
-            pnlNav           = new Panel();
-            pnlNavBrand      = new Panel();
-            pnlNavBadge      = new Panel();
-            lblNavTitle      = new Label();
-            lblNavStore      = new Label();
+            pnlTop = new Panel();
+            lblBreadcrumb = new Label();
+            pnlSearch = new Panel();
+            btnSettings = new Button();
+            btnNotification = new Button();
+            pnlNotifDot = new Panel();
+            pnlAvatar = new Panel();
+            lblTopUserName = new Label();
+            lblTopRole = new Label();
+            btnSignOut = new Button();
+            pnlNav = new Panel();
+            pnlNavBrand = new Panel();
+            pnlNavBadge = new Panel();
+            lblNavTitle = new Label();
+            lblNavStore = new Label();
             pnlNavBrandBorder = new Panel();
-            lblNavMenu       = new Label();
-            btnDashboard     = new Button();
-            btnProducts      = new Button();
-            btnNewSale       = new Button();
-            btnCustomers     = new Button();
-            btnReports       = new Button();
-            btnUsers         = new Button();
-            pnlNavDivider    = new Panel();
-            lblF2Badge       = new Label();
-            pnlStatusBar     = new Panel();
-            lblStatusDot     = new Label();
-            lblStatusBar     = new Label();
-            pnlContent       = new Panel();
-
+            lblNavMenu = new Label();
+            btnDashboard = new Button();
+            btnProducts = new Button();
+            btnNewSale = new Button();
+            btnCustomers = new Button();
+            btnReports = new Button();
+            btnUsers = new Button();
+            pnlNavDivider = new Panel();
+            lblF2Badge = new Label();
+            pnlStatusBar = new Panel();
+            lblStatusDot = new Label();
+            lblStatusBar = new Label();
+            pnlContent = new Panel();
             pnlTop.SuspendLayout();
             pnlNav.SuspendLayout();
             pnlNavBrand.SuspendLayout();
             pnlStatusBar.SuspendLayout();
             SuspendLayout();
-
-            // ── pnlTop — white header bar ─────────────────────────────────────
+            // 
+            // pnlTop
+            // 
             pnlTop.BackColor = Color.White;
             pnlTop.Controls.Add(lblBreadcrumb);
             pnlTop.Controls.Add(pnlSearch);
@@ -63,128 +62,129 @@ namespace _20240305307_QuickSale
             pnlTop.Controls.Add(lblTopRole);
             pnlTop.Controls.Add(btnSignOut);
             pnlTop.Dock = DockStyle.Top;
+            pnlTop.Location = new Point(220, 0);
             pnlTop.Name = "pnlTop";
-            pnlTop.Size = new Size(1280, 64);
+            pnlTop.Size = new Size(1060, 58);
             pnlTop.TabIndex = 0;
-            //
+            // 
             // lblBreadcrumb
-            //
+            // 
             lblBreadcrumb.Font = new Font("Segoe UI", 11F);
             lblBreadcrumb.ForeColor = Color.FromArgb(30, 41, 59);
-            lblBreadcrumb.Location = new Point(20, 0);
+            lblBreadcrumb.Location = new Point(12, -2);
             lblBreadcrumb.Name = "lblBreadcrumb";
             lblBreadcrumb.Size = new Size(420, 64);
             lblBreadcrumb.TabIndex = 0;
             lblBreadcrumb.Text = "QuickSale  ›  Products";
             lblBreadcrumb.TextAlign = ContentAlignment.MiddleLeft;
-            //
-            // pnlSearch — custom-painted rounded search bar
-            //
+            // 
+            // pnlSearch
+            // 
             pnlSearch.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             pnlSearch.BackColor = Color.White;
             pnlSearch.Cursor = Cursors.IBeam;
-            pnlSearch.Location = new Point(642, 15);
+            pnlSearch.Location = new Point(422, 12);
             pnlSearch.Name = "pnlSearch";
             pnlSearch.Size = new Size(220, 34);
             pnlSearch.TabIndex = 1;
             pnlSearch.Paint += pnlSearch_Paint;
-            //
-            // btnSettings — gear icon
-            //
+            // 
+            // btnSettings
+            // 
             btnSettings.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             btnSettings.BackColor = Color.Transparent;
             btnSettings.Cursor = Cursors.Hand;
             btnSettings.FlatAppearance.BorderSize = 0;
             btnSettings.FlatAppearance.MouseOverBackColor = Color.FromArgb(241, 245, 249);
             btnSettings.FlatStyle = FlatStyle.Flat;
-            btnSettings.Font = new Font("Segoe MDL2 Assets", 14, GraphicsUnit.Pixel);
+            btnSettings.Font = new Font("Segoe MDL2 Assets", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
             btnSettings.ForeColor = Color.FromArgb(100, 116, 139);
-            btnSettings.Location = new Point(878, 14);
+            btnSettings.Location = new Point(656, 10);
             btnSettings.Name = "btnSettings";
             btnSettings.Size = new Size(36, 36);
             btnSettings.TabIndex = 2;
-            btnSettings.Text = "\uE713";
+            btnSettings.Text = "";
             btnSettings.UseVisualStyleBackColor = false;
             btnSettings.Click += btnSettings_Click;
-            //
-            // btnNotification — bell icon
-            //
+            // 
+            // btnNotification
+            // 
             btnNotification.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             btnNotification.BackColor = Color.Transparent;
             btnNotification.Cursor = Cursors.Hand;
             btnNotification.FlatAppearance.BorderSize = 0;
             btnNotification.FlatAppearance.MouseOverBackColor = Color.FromArgb(241, 245, 249);
             btnNotification.FlatStyle = FlatStyle.Flat;
-            btnNotification.Font = new Font("Segoe MDL2 Assets", 14, GraphicsUnit.Pixel);
+            btnNotification.Font = new Font("Segoe MDL2 Assets", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
             btnNotification.ForeColor = Color.FromArgb(100, 116, 139);
-            btnNotification.Location = new Point(918, 14);
+            btnNotification.Location = new Point(698, 10);
             btnNotification.Name = "btnNotification";
             btnNotification.Size = new Size(36, 36);
             btnNotification.TabIndex = 3;
-            btnNotification.Text = "\uEA8F";
+            btnNotification.Text = "";
             btnNotification.UseVisualStyleBackColor = false;
             btnNotification.Click += btnNotification_Click;
-            //
-            // pnlNotifDot — small red dot over bell
-            //
+            // 
+            // pnlNotifDot
+            // 
             pnlNotifDot.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             pnlNotifDot.BackColor = Color.FromArgb(220, 38, 38);
-            pnlNotifDot.Location = new Point(944, 12);
+            pnlNotifDot.Location = new Point(724, 12);
             pnlNotifDot.Name = "pnlNotifDot";
             pnlNotifDot.Size = new Size(8, 8);
             pnlNotifDot.TabIndex = 8;
-            //
-            // pnlAvatar — user initial circle
-            //
+            // 
+            // pnlAvatar
+            // 
             pnlAvatar.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             pnlAvatar.BackColor = Color.Transparent;
-            pnlAvatar.Location = new Point(966, 14);
+            pnlAvatar.Location = new Point(748, 12);
             pnlAvatar.Name = "pnlAvatar";
             pnlAvatar.Size = new Size(36, 36);
             pnlAvatar.TabIndex = 4;
             pnlAvatar.Paint += pnlAvatar_Paint;
-            //
+            // 
             // lblTopUserName
-            //
+            // 
             lblTopUserName.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             lblTopUserName.Font = new Font("Segoe UI", 9.5F, FontStyle.Bold);
             lblTopUserName.ForeColor = Color.FromArgb(30, 41, 59);
-            lblTopUserName.Location = new Point(1010, 13);
+            lblTopUserName.Location = new Point(790, 13);
             lblTopUserName.Name = "lblTopUserName";
             lblTopUserName.Size = new Size(150, 18);
             lblTopUserName.TabIndex = 5;
             lblTopUserName.TextAlign = ContentAlignment.MiddleLeft;
-            //
+            // 
             // lblTopRole
-            //
+            // 
             lblTopRole.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             lblTopRole.Font = new Font("Segoe UI", 8F);
             lblTopRole.ForeColor = Color.FromArgb(148, 163, 184);
-            lblTopRole.Location = new Point(1010, 33);
+            lblTopRole.Location = new Point(790, 33);
             lblTopRole.Name = "lblTopRole";
             lblTopRole.Size = new Size(150, 16);
             lblTopRole.TabIndex = 6;
             lblTopRole.TextAlign = ContentAlignment.MiddleLeft;
-            //
+            // 
             // btnSignOut
-            //
+            // 
             btnSignOut.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             btnSignOut.Cursor = Cursors.Hand;
             btnSignOut.FlatAppearance.BorderColor = Color.FromArgb(226, 232, 240);
-            btnSignOut.FlatAppearance.BorderSize = 1;
             btnSignOut.FlatAppearance.MouseOverBackColor = Color.FromArgb(241, 245, 249);
             btnSignOut.FlatStyle = FlatStyle.Flat;
             btnSignOut.Font = new Font("Segoe UI", 9F);
             btnSignOut.ForeColor = Color.FromArgb(148, 163, 184);
-            btnSignOut.Location = new Point(1168, 14);
+            btnSignOut.Location = new Point(948, 13);
             btnSignOut.Name = "btnSignOut";
             btnSignOut.Size = new Size(100, 36);
             btnSignOut.TabIndex = 7;
             btnSignOut.Text = "Sign out";
             btnSignOut.UseVisualStyleBackColor = false;
             btnSignOut.Click += btnLogout_Click;
-
-            // ── pnlNav — sidebar ──────────────────────────────────────────────
+            // 
+            // pnlNav
+            // 
             pnlNav.BackColor = Color.FromArgb(17, 28, 54);
             pnlNav.Controls.Add(pnlNavBrand);
             pnlNav.Controls.Add(lblNavMenu);
@@ -197,44 +197,46 @@ namespace _20240305307_QuickSale
             pnlNav.Controls.Add(pnlNavDivider);
             pnlNav.Controls.Add(lblF2Badge);
             pnlNav.Dock = DockStyle.Left;
+            pnlNav.Location = new Point(0, 0);
             pnlNav.Name = "pnlNav";
-            pnlNav.Size = new Size(220, 703);
+            pnlNav.Size = new Size(220, 768);
             pnlNav.TabIndex = 2;
-            //
+            // 
             // pnlNavBrand
-            //
+            // 
             pnlNavBrand.BackColor = Color.FromArgb(12, 21, 41);
             pnlNavBrand.Controls.Add(pnlNavBadge);
             pnlNavBrand.Controls.Add(lblNavTitle);
             pnlNavBrand.Controls.Add(lblNavStore);
             pnlNavBrand.Controls.Add(pnlNavBrandBorder);
             pnlNavBrand.Dock = DockStyle.Top;
+            pnlNavBrand.Location = new Point(0, 0);
             pnlNavBrand.Name = "pnlNavBrand";
-            pnlNavBrand.Size = new Size(220, 72);
+            pnlNavBrand.Size = new Size(220, 58);
             pnlNavBrand.TabIndex = 8;
-            //
-            // pnlNavBadge — gradient Q logo (custom painted)
-            //
+            // 
+            // pnlNavBadge
+            // 
             pnlNavBadge.BackColor = Color.Transparent;
-            pnlNavBadge.Location = new Point(18, 20);
+            pnlNavBadge.Location = new Point(20, 12);
             pnlNavBadge.Name = "pnlNavBadge";
             pnlNavBadge.Size = new Size(32, 32);
             pnlNavBadge.TabIndex = 0;
             pnlNavBadge.Paint += pnlNavBadge_Paint;
-            //
+            // 
             // lblNavTitle
-            //
+            // 
             lblNavTitle.BackColor = Color.Transparent;
             lblNavTitle.Font = new Font("Segoe UI", 13F, FontStyle.Bold);
             lblNavTitle.ForeColor = Color.White;
-            lblNavTitle.Location = new Point(58, 18);
+            lblNavTitle.Location = new Point(54, 12);
             lblNavTitle.Name = "lblNavTitle";
             lblNavTitle.Size = new Size(150, 20);
             lblNavTitle.TabIndex = 1;
             lblNavTitle.Text = "QuickSale";
-            //
+            // 
             // lblNavStore
-            //
+            // 
             lblNavStore.BackColor = Color.Transparent;
             lblNavStore.Font = new Font("Segoe UI", 8F);
             lblNavStore.ForeColor = Color.FromArgb(71, 85, 105);
@@ -243,35 +245,37 @@ namespace _20240305307_QuickSale
             lblNavStore.Size = new Size(150, 16);
             lblNavStore.TabIndex = 2;
             lblNavStore.Text = "Maple Street Goods";
-            //
+            lblNavStore.Click += lblNavStore_Click;
+            // 
             // pnlNavBrandBorder
-            //
+            // 
             pnlNavBrandBorder.BackColor = Color.FromArgb(31, 42, 72);
             pnlNavBrandBorder.Dock = DockStyle.Bottom;
+            pnlNavBrandBorder.Location = new Point(0, 57);
             pnlNavBrandBorder.Name = "pnlNavBrandBorder";
             pnlNavBrandBorder.Size = new Size(220, 1);
             pnlNavBrandBorder.TabIndex = 3;
-            //
+            // 
             // lblNavMenu
-            //
+            // 
             lblNavMenu.Font = new Font("Segoe UI", 7.5F, FontStyle.Bold);
             lblNavMenu.ForeColor = Color.FromArgb(71, 85, 105);
-            lblNavMenu.Location = new Point(20, 72);
+            lblNavMenu.Location = new Point(20, 47);
             lblNavMenu.Name = "lblNavMenu";
             lblNavMenu.Size = new Size(200, 40);
             lblNavMenu.TabIndex = 0;
             lblNavMenu.Text = "MAIN";
             lblNavMenu.TextAlign = ContentAlignment.BottomLeft;
-            //
-            // btnDashboard — first nav item
-            //
+            // 
+            // btnDashboard
+            // 
             btnDashboard.BackColor = Color.Transparent;
             btnDashboard.Cursor = Cursors.Hand;
             btnDashboard.FlatAppearance.BorderSize = 0;
             btnDashboard.FlatStyle = FlatStyle.Flat;
             btnDashboard.Font = new Font("Segoe UI", 10F);
             btnDashboard.ForeColor = Color.FromArgb(148, 163, 184);
-            btnDashboard.Location = new Point(0, 112);
+            btnDashboard.Location = new Point(0, 90);
             btnDashboard.Name = "btnDashboard";
             btnDashboard.Padding = new Padding(22, 0, 0, 0);
             btnDashboard.Size = new Size(220, 52);
@@ -282,16 +286,16 @@ namespace _20240305307_QuickSale
             btnDashboard.Click += btnDashboard_Click;
             btnDashboard.MouseEnter += NavBtn_MouseEnter;
             btnDashboard.MouseLeave += NavBtn_MouseLeave;
-            //
-            // btnProducts (shifted to Y=164)
-            //
+            // 
+            // btnProducts
+            // 
             btnProducts.BackColor = Color.Transparent;
             btnProducts.Cursor = Cursors.Hand;
             btnProducts.FlatAppearance.BorderSize = 0;
             btnProducts.FlatStyle = FlatStyle.Flat;
             btnProducts.Font = new Font("Segoe UI", 10F);
             btnProducts.ForeColor = Color.FromArgb(148, 163, 184);
-            btnProducts.Location = new Point(0, 164);
+            btnProducts.Location = new Point(0, 148);
             btnProducts.Name = "btnProducts";
             btnProducts.Padding = new Padding(22, 0, 0, 0);
             btnProducts.Size = new Size(220, 52);
@@ -302,16 +306,16 @@ namespace _20240305307_QuickSale
             btnProducts.Click += btnProducts_Click;
             btnProducts.MouseEnter += NavBtn_MouseEnter;
             btnProducts.MouseLeave += NavBtn_MouseLeave;
-            //
-            // btnNewSale (shifted to Y=216)
-            //
+            // 
+            // btnNewSale
+            // 
             btnNewSale.BackColor = Color.Transparent;
             btnNewSale.Cursor = Cursors.Hand;
             btnNewSale.FlatAppearance.BorderSize = 0;
             btnNewSale.FlatStyle = FlatStyle.Flat;
             btnNewSale.Font = new Font("Segoe UI", 10F);
             btnNewSale.ForeColor = Color.FromArgb(148, 163, 184);
-            btnNewSale.Location = new Point(0, 216);
+            btnNewSale.Location = new Point(0, 206);
             btnNewSale.Name = "btnNewSale";
             btnNewSale.Padding = new Padding(22, 0, 0, 0);
             btnNewSale.Size = new Size(220, 52);
@@ -322,16 +326,16 @@ namespace _20240305307_QuickSale
             btnNewSale.Click += btnNewSale_Click;
             btnNewSale.MouseEnter += NavBtn_MouseEnter;
             btnNewSale.MouseLeave += NavBtn_MouseLeave;
-            //
-            // btnCustomers (shifted to Y=268)
-            //
+            // 
+            // btnCustomers
+            // 
             btnCustomers.BackColor = Color.Transparent;
             btnCustomers.Cursor = Cursors.Hand;
             btnCustomers.FlatAppearance.BorderSize = 0;
             btnCustomers.FlatStyle = FlatStyle.Flat;
             btnCustomers.Font = new Font("Segoe UI", 10F);
             btnCustomers.ForeColor = Color.FromArgb(148, 163, 184);
-            btnCustomers.Location = new Point(0, 268);
+            btnCustomers.Location = new Point(0, 264);
             btnCustomers.Name = "btnCustomers";
             btnCustomers.Padding = new Padding(22, 0, 0, 0);
             btnCustomers.Size = new Size(220, 52);
@@ -342,9 +346,9 @@ namespace _20240305307_QuickSale
             btnCustomers.Click += btnCustomers_Click;
             btnCustomers.MouseEnter += NavBtn_MouseEnter;
             btnCustomers.MouseLeave += NavBtn_MouseLeave;
-            //
-            // btnReports (shifted to Y=320)
-            //
+            // 
+            // btnReports
+            // 
             btnReports.BackColor = Color.Transparent;
             btnReports.Cursor = Cursors.Hand;
             btnReports.FlatAppearance.BorderSize = 0;
@@ -362,16 +366,16 @@ namespace _20240305307_QuickSale
             btnReports.Click += btnReports_Click;
             btnReports.MouseEnter += NavBtn_MouseEnter;
             btnReports.MouseLeave += NavBtn_MouseLeave;
-            //
-            // btnUsers (shifted to Y=372)
-            //
+            // 
+            // btnUsers
+            // 
             btnUsers.BackColor = Color.Transparent;
             btnUsers.Cursor = Cursors.Hand;
             btnUsers.FlatAppearance.BorderSize = 0;
             btnUsers.FlatStyle = FlatStyle.Flat;
             btnUsers.Font = new Font("Segoe UI", 10F);
             btnUsers.ForeColor = Color.FromArgb(148, 163, 184);
-            btnUsers.Location = new Point(0, 372);
+            btnUsers.Location = new Point(0, 378);
             btnUsers.Name = "btnUsers";
             btnUsers.Padding = new Padding(22, 0, 0, 0);
             btnUsers.Size = new Size(220, 52);
@@ -383,17 +387,17 @@ namespace _20240305307_QuickSale
             btnUsers.Click += btnUsers_Click;
             btnUsers.MouseEnter += NavBtn_MouseEnter;
             btnUsers.MouseLeave += NavBtn_MouseLeave;
-            //
-            // pnlNavDivider (shifted to Y=436)
-            //
+            // 
+            // pnlNavDivider
+            // 
             pnlNavDivider.BackColor = Color.FromArgb(31, 42, 72);
             pnlNavDivider.Location = new Point(16, 436);
             pnlNavDivider.Name = "pnlNavDivider";
             pnlNavDivider.Size = new Size(188, 1);
             pnlNavDivider.TabIndex = 6;
-            //
-            // lblF2Badge (shifted to Y=228)
-            //
+            // 
+            // lblF2Badge
+            // 
             lblF2Badge.BackColor = Color.FromArgb(37, 99, 235);
             lblF2Badge.Font = new Font("Segoe UI", 7.5F, FontStyle.Bold);
             lblF2Badge.ForeColor = Color.White;
@@ -403,18 +407,20 @@ namespace _20240305307_QuickSale
             lblF2Badge.TabIndex = 9;
             lblF2Badge.Text = "F2";
             lblF2Badge.TextAlign = ContentAlignment.MiddleCenter;
-
-            // ── pnlStatusBar — bottom status bar ──────────────────────────────
+            // 
+            // pnlStatusBar
+            // 
             pnlStatusBar.BackColor = Color.FromArgb(12, 21, 41);
             pnlStatusBar.Controls.Add(lblStatusDot);
             pnlStatusBar.Controls.Add(lblStatusBar);
             pnlStatusBar.Dock = DockStyle.Bottom;
+            pnlStatusBar.Location = new Point(220, 740);
             pnlStatusBar.Name = "pnlStatusBar";
-            pnlStatusBar.Size = new Size(1280, 28);
+            pnlStatusBar.Size = new Size(1060, 28);
             pnlStatusBar.TabIndex = 4;
-            //
+            // 
             // lblStatusDot
-            //
+            // 
             lblStatusDot.Font = new Font("Segoe UI", 8F);
             lblStatusDot.ForeColor = Color.FromArgb(22, 163, 74);
             lblStatusDot.Location = new Point(12, 7);
@@ -422,9 +428,9 @@ namespace _20240305307_QuickSale
             lblStatusDot.Size = new Size(12, 14);
             lblStatusDot.TabIndex = 0;
             lblStatusDot.Text = "●";
-            //
+            // 
             // lblStatusBar
-            //
+            // 
             lblStatusBar.Font = new Font("Segoe UI", 8F);
             lblStatusBar.ForeColor = Color.FromArgb(100, 116, 139);
             lblStatusBar.Location = new Point(28, 0);
@@ -432,23 +438,22 @@ namespace _20240305307_QuickSale
             lblStatusBar.Size = new Size(1240, 28);
             lblStatusBar.TabIndex = 1;
             lblStatusBar.TextAlign = ContentAlignment.MiddleLeft;
-
-            // ── pnlContent ────────────────────────────────────────────────────
+            // 
+            // pnlContent
+            // 
             pnlContent.BackColor = Color.FromArgb(241, 245, 249);
             pnlContent.Dock = DockStyle.Fill;
+            pnlContent.Location = new Point(220, 58);
             pnlContent.Name = "pnlContent";
-            pnlContent.Size = new Size(1060, 703);
+            pnlContent.Size = new Size(1060, 682);
             pnlContent.TabIndex = 3;
-
-            // ── frmMain ───────────────────────────────────────────────────────
+            // 
+            // frmMain
+            // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(17, 28, 54);
             ClientSize = new Size(1280, 768);
-            // Dock order: last added = first docked.
-            // pnlNav added last → docks Left spanning full height.
-            // pnlTop/pnlStatusBar added next → dock Top/Bottom of remaining (right) area.
-            // pnlContent fills what's left.
             Controls.Add(pnlContent);
             Controls.Add(pnlTop);
             Controls.Add(pnlStatusBar);
@@ -459,7 +464,6 @@ namespace _20240305307_QuickSale
             StartPosition = FormStartPosition.CenterScreen;
             Text = "QuickSale — Dashboard";
             WindowState = FormWindowState.Maximized;
-
             pnlTop.ResumeLayout(false);
             pnlNav.ResumeLayout(false);
             pnlNavBrand.ResumeLayout(false);

@@ -3,37 +3,37 @@ namespace _20240305307_QuickSale;
 public partial class frmMain : Form
 {
     // ── Sidebar colour constants ─────────────────────────────────────────────
-    private static readonly Color NavNormal     = Color.Transparent;
+    private static readonly Color NavNormal = Color.Transparent;
     private static readonly Color NavNormalText = Color.FromArgb(148, 163, 184);
-    private static readonly Color NavHover      = Color.FromArgb(27,  44,  80);
-    private static readonly Color NavHoverText  = Color.FromArgb(203, 213, 225);
-    private static readonly Color NavActive     = Color.FromArgb(37,  99,  235);
+    private static readonly Color NavHover = Color.FromArgb(27, 44, 80);
+    private static readonly Color NavHoverText = Color.FromArgb(203, 213, 225);
+    private static readonly Color NavActive = Color.FromArgb(37, 99, 235);
     private static readonly Color NavActiveText = Color.White;
 
     // ── Nav icon glyphs (Segoe MDL2 Assets) ─────────────────────────────────
     private static readonly Dictionary<string, string> NavIcons = new()
     {
         ["btnDashboard"] = "\uE80F",   // Home
-        ["btnProducts"]  = "\uE7B8",   // Package
-        ["btnNewSale"]   = "\uE7BF",   // Shop / cart
+        ["btnProducts"] = "\uE7B8",   // Package
+        ["btnNewSale"] = "\uE7BF",   // Shop / cart
         ["btnCustomers"] = "\uE77B",   // People
-        ["btnReports"]   = "\uE9D9",   // Chart
-        ["btnUsers"]     = "\uE716",   // Person / contact
+        ["btnReports"] = "\uE9D9",   // Chart
+        ["btnUsers"] = "\uE716",   // Person / contact
     };
 
     // ── Breadcrumb page name map ─────────────────────────────────────────────
     private static readonly Dictionary<string, string> PageNames = new()
     {
         ["btnDashboard"] = "Dashboard",
-        ["btnProducts"]  = "Products",
-        ["btnNewSale"]   = "New Sale",
+        ["btnProducts"] = "Products",
+        ["btnNewSale"] = "New Sale",
         ["btnCustomers"] = "Customers",
-        ["btnReports"]   = "Reports",
-        ["btnUsers"]     = "Users",
+        ["btnReports"] = "Reports",
+        ["btnUsers"] = "Users",
     };
 
     private Button? _activeNavBtn;
-    private Form?   _currentChildForm;
+    private Form? _currentChildForm;
     private System.Windows.Forms.Timer? _statusTimer;
 
     public frmMain()
@@ -47,7 +47,7 @@ public partial class frmMain : Form
 
         // Top bar user info
         lblTopUserName.Text = Session.CurrentUser?.Username ?? string.Empty;
-        lblTopRole.Text     = Session.CurrentUser?.Role     ?? string.Empty;
+        lblTopRole.Text = Session.CurrentUser?.Role ?? string.Empty;
 
         // Admin-only section
         btnUsers.Visible = Session.IsAdmin;
@@ -72,10 +72,10 @@ public partial class frmMain : Form
     private static System.Drawing.Drawing2D.GraphicsPath CreateRoundedPath(Rectangle rect, int radius)
     {
         var path = new System.Drawing.Drawing2D.GraphicsPath();
-        path.AddArc(rect.X,                  rect.Y,                   radius * 2, radius * 2, 180, 90);
-        path.AddArc(rect.Right - radius * 2, rect.Y,                   radius * 2, radius * 2, 270, 90);
-        path.AddArc(rect.Right - radius * 2, rect.Bottom - radius * 2, radius * 2, radius * 2,   0, 90);
-        path.AddArc(rect.X,                  rect.Bottom - radius * 2, radius * 2, radius * 2,  90, 90);
+        path.AddArc(rect.X, rect.Y, radius * 2, radius * 2, 180, 90);
+        path.AddArc(rect.Right - radius * 2, rect.Y, radius * 2, radius * 2, 270, 90);
+        path.AddArc(rect.Right - radius * 2, rect.Bottom - radius * 2, radius * 2, radius * 2, 0, 90);
+        path.AddArc(rect.X, rect.Bottom - radius * 2, radius * 2, radius * 2, 90, 90);
         path.CloseFigure();
         return path;
     }
@@ -85,7 +85,7 @@ public partial class frmMain : Form
     private void UpdateStatusBar()
     {
         var user = Session.CurrentUser;
-        var now  = DateTime.Now;
+        var now = DateTime.Now;
         lblStatusBar.Text =
             $"Connected  ·  Server POS-SRV-01  |  Register #3  |  " +
             $"Shift: 08:00 – 17:00  |  Signed in as {user?.Username} ({user?.Role})  |  " +
@@ -99,7 +99,7 @@ public partial class frmMain : Form
         var g = e.Graphics;
         g.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
         var rect = new Rectangle(0, 0, 31, 31);
-        using var path  = CreateRoundedPath(rect, 8);
+        using var path = CreateRoundedPath(rect, 8);
         using var brush = new System.Drawing.Drawing2D.LinearGradientBrush(
             rect, Color.FromArgb(59, 130, 246), Color.FromArgb(14, 165, 233), 135F);
         g.FillPath(brush, path);
@@ -122,15 +122,15 @@ public partial class frmMain : Form
 
     private void pnlSearch_Paint(object sender, PaintEventArgs e)
     {
-        var pnl  = (Panel)sender;
-        var g    = e.Graphics;
+        var pnl = (Panel)sender;
+        var g = e.Graphics;
         g.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
         g.Clear(Color.White);
 
         // Rounded outline
         var rect = new Rectangle(0, 0, pnl.Width - 1, pnl.Height - 1);
         using var path = CreateRoundedPath(rect, 8);
-        using var pen  = new Pen(Color.FromArgb(226, 232, 240), 1f);
+        using var pen = new Pen(Color.FromArgb(226, 232, 240), 1f);
         g.DrawPath(pen, path);
 
         // Search icon
@@ -145,8 +145,8 @@ public partial class frmMain : Form
         const string badge = "Ctrl+K";
         using var badgeFont = new Font("Segoe UI", 7.5F);
         var bsz = g.MeasureString(badge, badgeFont);
-        var bx  = pnl.Width - (int)bsz.Width - 14;
-        var by  = (pnl.Height - (int)bsz.Height) / 2;
+        var bx = pnl.Width - (int)bsz.Width - 14;
+        var by = (pnl.Height - (int)bsz.Height) / 2;
         var badgeRect = new Rectangle(bx - 4, by - 2, (int)bsz.Width + 8, (int)bsz.Height + 4);
         using var badgePath = CreateRoundedPath(badgeRect, 3);
         g.DrawPath(pen, badgePath);
@@ -159,14 +159,14 @@ public partial class frmMain : Form
     {
         var bmp = new Bitmap(20, 20, System.Drawing.Imaging.PixelFormat.Format32bppArgb);
         using var g = Graphics.FromImage(bmp);
-        g.SmoothingMode     = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
+        g.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
         g.TextRenderingHint = System.Drawing.Text.TextRenderingHint.AntiAlias;
         g.Clear(Color.Transparent);
-        using var font  = new Font("Segoe MDL2 Assets", 14, GraphicsUnit.Pixel);
+        using var font = new Font("Segoe MDL2 Assets", 14, GraphicsUnit.Pixel);
         using var brush = new SolidBrush(color);
         var sf = new StringFormat
         {
-            Alignment     = StringAlignment.Center,
+            Alignment = StringAlignment.Center,
             LineAlignment = StringAlignment.Center,
         };
         g.DrawString(glyph, font, brush, new RectangleF(0, 0, 20, 20), sf);
@@ -178,11 +178,11 @@ public partial class frmMain : Form
         foreach (var btn in new[] { btnDashboard, btnProducts, btnNewSale, btnCustomers, btnReports, btnUsers })
         {
             if (!NavIcons.TryGetValue(btn.Name, out var glyph)) continue;
-            btn.Image             = MakeNavIcon(glyph, NavNormalText);
-            btn.ImageAlign        = ContentAlignment.MiddleLeft;
+            btn.Image = MakeNavIcon(glyph, NavNormalText);
+            btn.ImageAlign = ContentAlignment.MiddleLeft;
             btn.TextImageRelation = TextImageRelation.ImageBeforeText;
-            btn.Padding           = new Padding(14, 0, 0, 0);
-            btn.TextAlign         = ContentAlignment.MiddleLeft;
+            btn.Padding = new Padding(14, 0, 0, 0);
+            btn.TextAlign = ContentAlignment.MiddleLeft;
         }
     }
 
@@ -206,9 +206,9 @@ public partial class frmMain : Form
         _currentChildForm?.Close();
         _currentChildForm = form;
 
-        form.TopLevel        = false;
+        form.TopLevel = false;
         form.FormBorderStyle = FormBorderStyle.None;
-        form.Dock            = DockStyle.Fill;
+        form.Dock = DockStyle.Fill;
 
         pnlContent.Controls.Clear();
         pnlContent.Controls.Add(form);
@@ -244,22 +244,22 @@ public partial class frmMain : Form
 
     private void btnDashboard_Click(object sender, EventArgs e)
         => NavigateTo(btnDashboard, () => new Form
-            { Text = "Dashboard", BackColor = Color.FromArgb(241, 245, 249), FormBorderStyle = FormBorderStyle.None });
+        { Text = "Dashboard", BackColor = Color.FromArgb(241, 245, 249), FormBorderStyle = FormBorderStyle.None });
 
     private void btnProducts_Click(object sender, EventArgs e)
-        => NavigateTo(btnProducts,  () => new frmProducts());
+        => NavigateTo(btnProducts, () => new frmProducts());
 
     private void btnNewSale_Click(object sender, EventArgs e)
-        => NavigateTo(btnNewSale,   () => new frmNewSale());
+        => NavigateTo(btnNewSale, () => new frmNewSale());
 
     private void btnCustomers_Click(object sender, EventArgs e)
         => NavigateTo(btnCustomers, () => new frmCustomers());
 
     private void btnReports_Click(object sender, EventArgs e)
-        => NavigateTo(btnReports,   () => new frmReports());
+        => NavigateTo(btnReports, () => new frmReports());
 
     private void btnUsers_Click(object sender, EventArgs e)
-        => NavigateTo(btnUsers,     () => new frmUsers());
+        => NavigateTo(btnUsers, () => new frmUsers());
 
     // ── Nav hover ─────────────────────────────────────────────────────────────
 
@@ -337,5 +337,10 @@ public partial class frmMain : Form
         base.OnFormClosed(e);
         _statusTimer?.Stop();
         Session.Clear();
+    }
+
+    private void lblNavStore_Click(object sender, EventArgs e)
+    {
+
     }
 }
